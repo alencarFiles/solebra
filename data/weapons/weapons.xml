@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<weapons>
+	<distance id="2545" script="paladin/poison arrow.lua"/>
+	<distance id="2546" script="paladin/explosive arrow.lua"/>
+	
+	<!-- Wands -->
+	<wand id="8438" level="7" mana="2" min="8" max="18" type="energy" event="function" value="default">
+		<vocation name="sorcerer"/>
+		<vocation id="1" showInDescription="0"/>
+	</wand>
+	<wand id="8439" level="13" mana="3" min="13" max="25" type="fire" event="function" value="default">
+		<vocation name="sorcerer"/>
+		<vocation id="1" showInDescription="0"/>
+	</wand>
+	<wand id="8440" level="13" mana="3" min="13" max="25" type="energy" event="function" value="default">
+		<vocation name="druid"/>
+		<vocation id="2" showInDescription="0"/>
+	</wand>
+	<wand id="8441" level="13" mana="3" min="13" max="25" type="fire" event="function" value="default">
+		<vocation name="druid"/>
+		<vocation id="2" showInDescription="0"/>
+	</wand>
+	<wand id="8442" level="13" mana="3" min="13" max="25" type="fire" event="function" value="default">
+		<vocation name="sorcerer"/>
+		<vocation id="1" showInDescription="0"/>
+	</wand>
+	<wand id="8468" level="13" mana="3" min="13" max="25" type="fire" event="function" value="default">
+		<vocation name="sorcerer"/>
+		<vocation id="1" showInDescription="0"/>
+	</wand>
+	<wand id="8467" level="13" mana="3" min="13" max="25" type="fire" event="function" value="default">
+		<vocation name="druid"/>
+		<vocation id="2" showInDescription="0"/>
+	</wand>
+	
+	
+	
+		<!-- Bows and Crossbows -->
+		<!-- Crossbow -->
+		<distance id="2455" event="function" value="default"/>
+		<!-- Bow -->
+		<distance id="2456" event="function" value="default"/>
+		<distance id="5795" event="function" value="default"/>
+		<distance id="5796" event="function" value="default"/>
+		<!-- Arbalest -->
+		<distance id="5519" event="function" value="default"/>
+		<distance id="5793" event="function" value="default"/>
+		<distance id="5794" event="function" value="default"/>
+	<!-- Ammunition -->
+		<!-- Small Stone -->
+		<distance id="1294" event="function" value="default"/>
+		<!-- Snow Ball -->
+		<distance id="2111" event="function" value="default"/>
+		<!-- Spear -->
+		<distance id="2389" event="function" value="default"/>
+		<!-- Throwing Star -->
+		<distance id="2399" event="function" value="default"/>
+		<!-- Throwing Knife -->
+		<distance id="2410" event="function" value="default"/>
+		<!-- Bolt -->
+		<distance id="2543" event="function" value="default"/>
+		<distance id="8170" event="function" value="default"/>
+		<!-- Arrow -->
+		<distance id="2544" event="function" value="default"/>
+		<!-- Power Bolt -->
+		<distance id="2547" event="function" value="default"/>
+		<!-- Hunting Spear -->
+</weapons>

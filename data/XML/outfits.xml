@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<outfits>
+	<outfit id="1">
+		<list gender="0" lookType="258" name="Citizen"/>
+		<list gender="1" lookType="267" name="Citizen"/>
+	</outfit>
+
+	<outfit id="2">
+		<list gender="0" lookType="259" name="Hunter"/>
+		<list gender="1" lookType="268" name="Hunter"/>
+	</outfit>
+
+	<outfit id="3">
+		<list gender="0" lookType="260" name="Mage"/>
+		<list gender="1" lookType="269" name="Mage"/>
+	</outfit>
+
+	<outfit id="4">
+		<list gender="0" lookType="261" name="Knight"/>
+		<list gender="1" lookType="270" name="Knight"/>
+	</outfit>
+
+	<outfit id="5">
+		<list gender="0" lookType="262" name="Noblewoman"/>
+		<list gender="1" lookType="271" name="Nobleman"/>
+	</outfit>
+
+	<outfit id="6">
+		<list gender="0" lookType="432" name="Summoner"/>
+		<list gender="1" lookType="316" name="Summoner"/>
+	</outfit>
+
+	<outfit id="7">
+		<list gender="0" lookType="263" name="Warrior"/>
+		<list gender="1" lookType="272" name="Warrior"/>
+	</outfit>
+	
+	
+	
+	
+	
+	<outfit id="8" storageId="8470001" storageValue="1" premium="no">
+		<list gender="0" lookType="258" name="Citizen"/>
+		<list gender="1" lookType="267" name="Citizen"/>
+	</outfit>
+
+	<outfit id="9" storageId="8470002" storageValue="1" premium="no">
+		<list gender="0" lookType="259" name="Hunter"/>
+		<list gender="1" lookType="268" name="Hunter"/>
+	</outfit>
+
+	<outfit id="10" storageId="8470003" storageValue="1" premium="no">
+		<list gender="0" lookType="260" name="Mage"/>
+		<list gender="1" lookType="269" name="Mage"/>
+	</outfit>
+
+	<outfit id="11" storageId="8470004" storageValue="1" premium="no">
+		<list gender="0" lookType="261" name="Knight"/>
+		<list gender="1" lookType="270" name="Knight"/>
+	</outfit>
+
+	<outfit id="12" storageId="8470005" storageValue="1" premium="no">
+		<list gender="0" lookType="262" name="Noblewoman"/>
+		<list gender="1" lookType="271" name="Nobleman"/>
+	</outfit>
+
+	<outfit id="13" storageId="8470006" storageValue="1" premium="no">
+		<list gender="1" lookType="316" name="Summoner"/>
+		<list gender="0" lookType="432" name="Summoner"/>
+	</outfit>
+
+	<outfit id="14" storageId="8470007" storageValue="1" premium="no">
+		<list gender="0" lookType="263" name="Warrior"/>
+		<list gender="1" lookType="272" name="Warrior"/>
+	</outfit>
+	
+	<outfit id="15" storageId="8470008" storageValue="1" premium="no">
+		<list gender="1" lookType="436" name="Druid"/>
+		<list gender="0" lookType="431" name="Druid"/>
+	</outfit>	
+	
+	<outfit id="16" storageId="8470009" storageValue="1" premium="no">
+		<list gender="1" lookType="414" name="Oriental"/>
+		<list gender="0" lookType="434" name="Oriental"/>
+	</outfit>	
+
+	<outfit id="17" storageId="8470010" storageValue="1" premium="no">
+		<list gender="1" lookType="435" name="Assassin"/>
+		<list gender="0" lookType="437" name="Assassin"/>
+	</outfit>
+	
+	<outfit id="18" storageId="8470011" storageValue="1" premium="no">
+		<list gender="0" lookType="337" name="Guardian"/>
+		<list gender="1" lookType="308" name="Guardian"/>
+	</outfit>
+	
+	<outfit id="19" storageId="8470012" storageValue="1" premium="no">
+		<list gender="0" lookType="338" name="Spike Elite"/>
+		<list gender="1" lookType="309" name="Spike Elite"/>
+	</outfit>
+	
+	<outfit id="20" storageId="8470013" storageValue="1" premium="no">
+		<list gender="1" lookType="307" name="Mysticelite"/>
+		<list gender="0" lookType="336" name="Mysticelite"/>
+	</outfit>
+
+	<outfit id="21" storageId="8470014" storageValue="1" premium="no">
+		<list gender="1" lookType="275" name="Yalahari"/>
+		<list gender="0" lookType="266" name="Yalahari"/>
+	</outfit>
+	
+	<outfit id="22" storageId="8470015" storageValue="1" premium="no">
+		<list gender="1" lookType="273" name="Brotherhood"/>
+		<list gender="0" lookType="265" name="Brotherhood"/>
+	</outfit>
+	
+	<outfit id="23" storageId="8470016" storageValue="1" premium="no">
+		<list gender="1" lookType="449" name="Golden"/>
+		<list gender="0" lookType="456" name="Golden"/>
+	</outfit>
+	
+	<outfit id="24" storageId="8470017" storageValue="1" premium="no">
+		<list gender="1" lookType="452" name="Crown"/>
+		<list gender="0" lookType="451" name="Crown"/>
+	</outfit>
+	
+	<outfit id="25" storageId="8470018" storageValue="1" premium="no">
+		<list gender="1" lookType="454" name="Dragon"/>
+		<list gender="0" lookType="455" name="Dragon"/>
+	</outfit>
+	
+	<outfit id="26" storageId="8470019" storageValue="1" premium="no">
+		<list gender="1" lookType="450" name="Conjurer"/>
+		<list gender="0" lookType="457" name="Conjurer"/>
+	</outfit>
+	
+	<outfit id="27" storageId="8470020" storageValue="1" premium="no">
+		<list gender="1" lookType="462" name="Rascoohan"/>
+		<list gender="0" lookType="461" name="Rascoohan"/>
+	</outfit>
+	
+	<outfit id="28" storageId="8470021" storageValue="1" premium="no">
+		<list gender="1" lookType="460" name="Poltergeist"/>
+		<list gender="0" lookType="459" name="Poltergeist"/>
+	</outfit>
+	
+	<outfit id="29" storageId="8470022" storageValue="1" premium="no">
+		<list gender="1" lookType="469" name="Angel"/>
+		<list gender="0" lookType="468" name="Angel"/>
+	</outfit>
+	
+	<outfit id="30" storageId="8470023" storageValue="1" premium="no">
+		<list gender="1" lookType="470" name="Demon"/>
+		<list gender="0" lookType="470" name="Demon"/>
+	</outfit>
+	
+	<outfit id="31"  storageId="8470024" storageValue="1" premium="no">
+		<list gender="1" lookType="471" name="Centurion"/>
+		<list gender="0" lookType="471" name="Centurion"/>
+	</outfit>
+	
+	<outfit id="32" storageId="8470025" storageValue="1" premium="no">
+		<list gender="1" lookType="453" name="Tomb Assassin"/>
+		<list gender="0" lookType="458" name="Tomb Assassin"/>
+	</outfit>
+	
+	<outfit id="33">
+		<list gender="0" lookType="554" name="New outfit"/>
+		<list gender="1" lookType="553" name="New outfit"/>
+	</outfit>
+	
+	
+	
+	
+</outfits>
