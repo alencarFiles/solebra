@@ -27,7 +27,7 @@
 
 /* Define to 1 if you have the `boost_date_time' library (-lboost_date_time).
    */
-/* #undef HAVE_LIBBOOST_DATE_TIME */
+#define HAVE_LIBBOOST_DATE_TIME 1
 
 /* Define to 1 if you have the `boost_date_time-gcc-mt' library
    (-lboost_date_time-gcc-mt). */
@@ -35,11 +35,11 @@
 
 /* Define to 1 if you have the `boost_date_time-mt' library
    (-lboost_date_time-mt). */
-#define HAVE_LIBBOOST_DATE_TIME_MT 1
+/* #undef HAVE_LIBBOOST_DATE_TIME_MT */
 
 /* Define to 1 if you have the `boost_filesystem' library
    (-lboost_filesystem). */
-/* #undef HAVE_LIBBOOST_FILESYSTEM */
+#define HAVE_LIBBOOST_FILESYSTEM 1
 
 /* Define to 1 if you have the `boost_filesystem-gcc-mt' library
    (-lboost_filesystem-gcc-mt). */
@@ -47,20 +47,20 @@
 
 /* Define to 1 if you have the `boost_filesystem-mt' library
    (-lboost_filesystem-mt). */
-#define HAVE_LIBBOOST_FILESYSTEM_MT 1
+/* #undef HAVE_LIBBOOST_FILESYSTEM_MT */
 
 /* Define to 1 if you have the `boost_regex' library (-lboost_regex). */
-/* #undef HAVE_LIBBOOST_REGEX */
+#define HAVE_LIBBOOST_REGEX 1
 
 /* Define to 1 if you have the `boost_regex-gcc-mt' library
    (-lboost_regex-gcc-mt). */
 /* #undef HAVE_LIBBOOST_REGEX_GCC_MT */
 
 /* Define to 1 if you have the `boost_regex-mt' library (-lboost_regex-mt). */
-#define HAVE_LIBBOOST_REGEX_MT 1
+/* #undef HAVE_LIBBOOST_REGEX_MT */
 
 /* Define to 1 if you have the `boost_system' library (-lboost_system). */
-/* #undef HAVE_LIBBOOST_SYSTEM */
+#define HAVE_LIBBOOST_SYSTEM 1
 
 /* Define to 1 if you have the `boost_system-gcc-mt' library
    (-lboost_system-gcc-mt). */
@@ -68,10 +68,10 @@
 
 /* Define to 1 if you have the `boost_system-mt' library (-lboost_system-mt).
    */
-#define HAVE_LIBBOOST_SYSTEM_MT 1
+/* #undef HAVE_LIBBOOST_SYSTEM_MT */
 
 /* Define to 1 if you have the `boost_thread' library (-lboost_thread). */
-/* #undef HAVE_LIBBOOST_THREAD */
+#define HAVE_LIBBOOST_THREAD 1
 
 /* Define to 1 if you have the `boost_thread-gcc-mt' library
    (-lboost_thread-gcc-mt). */
@@ -79,7 +79,7 @@
 
 /* Define to 1 if you have the `boost_thread-mt' library (-lboost_thread-mt).
    */
-#define HAVE_LIBBOOST_THREAD_MT 1
+/* #undef HAVE_LIBBOOST_THREAD_MT */
 
 /* Define to 1 if you have the `crypto' library (-lcrypto). */
 #define HAVE_LIBCRYPTO 1
@@ -97,7 +97,7 @@
 /* #undef HAVE_LIBLUAJIT_5_1 */
 
 /* Define to 1 if you have the `mysqlclient' library (-lmysqlclient). */
-#define HAVE_LIBMYSQLCLIENT 1
+/* #undef HAVE_LIBMYSQLCLIENT */
 
 /* Define to 1 if you have the `mysqlcppconn' library (-lmysqlcppconn). */
 /* #undef HAVE_LIBMYSQLCPPCONN */
@@ -109,7 +109,7 @@
 #define HAVE_LIBPTHREAD 1
 
 /* Define to 1 if you have the `sqlite3' library (-lsqlite3). */
-/* #undef HAVE_LIBSQLITE3 */
+#define HAVE_LIBSQLITE3 1
 
 /* Define to 1 if you have the `z' library (-lz). */
 #define HAVE_LIBZ 1
@@ -134,7 +134,7 @@
 #define HAVE_MEMSET 1
 
 /* Define to 1 if you have the <mysql/mysql.h> header file. */
-#define HAVE_MYSQL_MYSQL_H 1
+/* #undef HAVE_MYSQL_MYSQL_H */
 
 /* Define to 1 if you have the <netdb.h> header file. */
 #define HAVE_NETDB_H 1
@@ -171,13 +171,13 @@
 #define HAVE_REALLOC 1
 
 /* Define to 1 if you have the <sqlite3.h> header file. */
-/* #undef HAVE_SQLITE3_H */
+#define HAVE_SQLITE3_H 1
 
 /* Define to 1 if you have the `sqrt' function. */
 #define HAVE_SQRT 1
 
 /* Define to 1 if stdbool.h conforms to C99. */
-#define HAVE_STDBOOL_H 1
+/* #undef HAVE_STDBOOL_H */
 
 /* Define to 1 if you have the <stddef.h> header file. */
 #define HAVE_STDDEF_H 1

@@ -590,40 +590,70 @@ ServiceManager* services)
 	}
 
 	#ifdef _MULTIPLATFORM77
-	std::clog << ">> Loading RSA key" << std::endl;
-	#if defined(WINDOWS) && !defined(_CONSOLE)
-	SendMessage(GUI::getInstance()->m_statusBar, WM_SETTEXT, 0, (LPARAM)">> Loading RSA Key");
-	#endif
-	g_RSA = RSA_new();
 
-	BN_dec2bn(&g_RSA->p, g_config.getString(ConfigManager::RSA_PRIME1).c_str());
-	BN_dec2bn(&g_RSA->q, g_config.getString(ConfigManager::RSA_PRIME2).c_str());
-	BN_dec2bn(&g_RSA->d, g_config.getString(ConfigManager::RSA_PRIVATE).c_str());
-	BN_dec2bn(&g_RSA->n, g_config.getString(ConfigManager::RSA_MODULUS).c_str());
-	BN_dec2bn(&g_RSA->e, g_config.getString(ConfigManager::RSA_PUBLIC).c_str());
+std::clog << ">> Loading RSA key" << std::endl;
 
-	// This check will verify keys set in config.lua
-	if(RSA_check_key(g_RSA))
-	{
-		// Ok, now we calculate a few things, dmp1, dmq1 and iqmp
-		BN_CTX* ctx = BN_CTX_new();
-		BN_CTX_start(ctx);
+#if defined(WINDOWS) && !defined(_CONSOLE)
+SendMessage(GUI::getInstance()->m_statusBar, WM_SETTEXT, 0, (LPARAM)">> Loading RSA Key");
+#endif
 
-		BIGNUM *r1 = BN_CTX_get(ctx), *r2 = BN_CTX_get(ctx);
-		BN_mod(g_RSA->dmp1, g_RSA->d, r1, ctx);
-		BN_mod(g_RSA->dmq1, g_RSA->d, r2, ctx);
+g_RSA = RSA_new();
 
-		BN_mod_inverse(g_RSA->iqmp, g_RSA->q, g_RSA->p, ctx);
-	}
-	else
-	{
-		ERR_load_crypto_strings();
-		std::stringstream s;
+BIGNUM* p = nullptr;
+BIGNUM* q = nullptr;
+BIGNUM* d = nullptr;
+BIGNUM* n = nullptr;
+BIGNUM* e = nullptr;
 
-		s << std::endl << "> OpenSSL failed - " << ERR_error_string(ERR_get_error(), NULL);
-		startupErrorMessage(s.str());
-	}
-	#endif
+BN_dec2bn(&p, g_config.getString(ConfigManager::RSA_PRIME1).c_str());
+BN_dec2bn(&q, g_config.getString(ConfigManager::RSA_PRIME2).c_str());
+BN_dec2bn(&d, g_config.getString(ConfigManager::RSA_PRIVATE).c_str());
+BN_dec2bn(&n, g_config.getString(ConfigManager::RSA_MODULUS).c_str());
+BN_dec2bn(&e, g_config.getString(ConfigManager::RSA_PUBLIC).c_str());
+
+// Definindo as partes principais da chave (n, e, d)
+if (!RSA_set0_key(g_RSA, n, e, d)) {
+    std::stringstream s;
+    s << "> Failed to set RSA key components";
+    startupErrorMessage(s.str());
+    return;
+}
+
+// Definindo os fatores p e q
+if (!RSA_set0_factors(g_RSA, p, q)) {
+    std::stringstream s;
+    s << "> Failed to set RSA factors";
+    startupErrorMessage(s.str());
+    return;
+}
+
+// Verificação da chave
+if (RSA_check_key(g_RSA)) {
+    // Calcular dmp1, dmq1 e iqmp
+    BN_CTX* ctx = BN_CTX_new();
+    BN_CTX_start(ctx);
+
+    BIGNUM* dmp1 = BN_new();
+    BIGNUM* dmq1 = BN_new();
+    BIGNUM* iqmp = BN_new();
+
+    BN_mod(dmp1, d, BN_value_one(), ctx); // inicializa com 1 para evitar falha
+    BN_mod(dmp1, d, p, ctx);
+    BN_mod(dmq1, d, q, ctx);
+    BN_mod_inverse(iqmp, q, p, ctx);
+
+    RSA_set0_crt_params(g_RSA, dmp1, dmq1, iqmp);
+
+    BN_CTX_end(ctx);
+    BN_CTX_free(ctx);
+} else {
+    ERR_load_crypto_strings();
+    std::stringstream s;
+    s << std::endl << "> OpenSSL failed - " << ERR_error_string(ERR_get_error(), NULL);
+    startupErrorMessage(s.str());
+}
+#endif
+
 
 	std::clog << ">> Starting SQL connection" << std::endl;
 	#if defined(WINDOWS) && !defined(_CONSOLE)
