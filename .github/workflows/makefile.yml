@@ -11,29 +11,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3.1.2
+      # ✅ 1. Checkout do repositório
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Install dependencies
-      run: |
-        sudo apt update
-        sudo apt install -y \
-          mingw-w64 \
-          liblua5.1-0-dev \
-          libboost-all-dev \
-          libxml2-dev \
-          zlib1g-dev \
-          cmake \
+      # ✅ 2. Instalação das dependências (compilação cruzada)
+      - name: Install build dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y \
+            mingw-w64 \
+            liblua5.1-0-dev \
+            libboost-all-dev \
+            libxml2-dev \
+            zlib1g-dev \
+            cmake \
+            make \
+            git
+
+      # ✅ 3. Compilar com MinGW
+      - name: Build with MinGW
+        run: |
+          cd Source
           make \
-          git
+            CC=x86_64-w64-mingw32-gcc \
+            CXX=x86_64-w64-mingw32-g++ \
+            -j$(nproc)
 
-    - name: Build with MinGW (cross-compile)
-      run: |
-        cd Source
-        make CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ -j$(nproc)
-
-    - name: Upload Windows executable
-      uses: actions/upload-artifact@v3.1.2
-      with:
-        name: otserv-windows-exe
-        path: Source/*.exe
+      # ✅ 4. Fazer upload do binário gerado (.exe)
+      - name: Upload Windows executable
+        uses: actions/upload-artifact@v3
+        with:
+          name: otserv-windows-exe
+          path: Source/*.exe
