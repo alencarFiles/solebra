@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3.1.2
+      uses: actions/checkout@v3
 
     - name: Install dependencies
       run: |
@@ -32,16 +32,13 @@ jobs:
         cd Source
         make CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ -j$(nproc)
 
-    - name: List generated .exe files
-      run: ls -lh Source/*.exe || echo "Nenhum executável encontrado."
-
     - name: Compress .exe into zip
       run: |
         cd Source
         zip otserv-windows.zip *.exe
 
     - name: Upload Windows executable ZIP
-      uses: actions/upload-artifact@v3.1.2
+      uses: actions/upload-artifact@v3
       with:
         name: otserv-windows-zip
         path: Source/otserv-windows.zip
