@@ -11,29 +11,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Install dependencies
-      run: |
-        sudo apt update
-        sudo apt install -y \
-          mingw-w64 \
-          liblua5.1-0-dev \
-          libboost-all-dev \
-          libxml2-dev \
-          zlib1g-dev \
-          cmake \
-          make \
-          git
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y \
+            mingw-w64 \
+            liblua5.1-0-dev \
+            libboost-all-dev \
+            libxml2-dev \
+            zlib1g-dev \
+            cmake \
+            make \
+            git
 
-    - name: Build with MinGW (cross-compile)
-      run: |
-        cd Source
-        make CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ -j$(nproc)
+      - name: Build with MinGW (cross-compile)
+        run: |
+          cd Source
+          make CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ -j$(nproc)
 
-    - name: Upload Windows executable
-      uses: actions/upload-artifact@v3
-      with:
-        name: otserv-windows-exe
-        path: Source/*.exe
+      - name: Upload Windows executable
+        uses: actions/upload-artifact@v3
+        with:
+          name: otserv-windows-exe
+          path: Source/*.exe
