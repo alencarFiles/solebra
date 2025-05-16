@@ -32,10 +32,18 @@ jobs:
         cd Source
         make CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ -j$(nproc)
 
+    - name: List contents of Source directory
+      run: ls -l Source
+
     - name: Compress .exe into zip
       run: |
         cd Source
-        zip otserv-windows.zip *.exe
+        if ls *.exe 1> /dev/null 2>&1; then
+          zip otserv-windows.zip *.exe
+        else
+          echo "No .exe files found to compress" >&2
+          exit 1
+        fi
 
     - name: Upload Windows executable ZIP
       uses: actions/upload-artifact@v3
